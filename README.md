@@ -42,7 +42,7 @@ Below is the following demo video showcasing the Raspberry Pi in action. When re
 
 ## Wiring Diagram
 
-<img src=".image/sketch_github_bb.png" alt="Overview" width="500">
+<img src="other/sketch_github_bb.png" alt="Overview" width="500">
 
 Follow this organized table to establish the proper connections, you can also read the reference here [GPIO on Raspberry Pi4](https://pinout.xyz/).
 
@@ -101,50 +101,50 @@ Now you have successfully installed the project and its dependencies.
     
 ## Usage
 
+```bash
+$ python detect.py --weights yolov5s.pt --source 0                                   # webcam
+                                                     img.jpg                         # image
+                                                     vid.mp4                         # video
+                                                     path/                           # directory
+                                                     'path/*.jpg'                    # glob
+                                                     'https://youtu.be/Zgi9g1ksQHc'  # YouTube
+                                                     'rtsp://example.com/media.mp4'  # RTSP, RTMP, HTTP stream
+```
+
+
 <details>
-<summary>Video Usage</summary>
+<summary>example video</summary>
 
 Default (without LED/LCD):
 ```bash
-  python3 RPI_detect_video.py --modeldir=mobilenetssd_320 --video=video_test.mp4 --graph=detect.tflite
+  python detect.py --img 320 --weights yolov5n_320px-fp32.tflite --source video_test.mp4  
 ```
 
 With LED/LCD:
 
 ```bash
-  python3 RPI_detect_video_led.py --modeldir=mobilenetssd_320 --video=video_test.mp4 --graph=detect.tflite
+  python detect_rpi_led.py --img 320 --weights yolov5n_320px-fp32.tflite --source video_test.mp4  
 ```
 
 </details>
 
-<details>
-<summary>Image Usage</summary>
-
-```bash
-  python3 RPI_detect_image.py --modeldir=mobilenetssd_320 --graph=detect.tflite --imagedir=image --save_results
-```
-
-Remove `--save_results` if you don't want to save images and change `--graph` to switch the model.
-
-</details>
 
 <details>
-<summary>Webcam Usage</summary>
+<summary>example webcam</summary>
 
 Default (without LED/LCD):
 ```bash
-  python3 RPI_detect_webcam.py --modeldir=mobilenetssd_320 --graph=detect.tflite
+  python detect.py --img 320 --weights yolov5n_320px-fp32.tflite --source 0
 ```
 
 With LED/LCD:
 
 ```bash
-  python3 RPI_detect_webcam_led.py --modeldir=mobilenetssd_320 --graph=detect.tflite
+  python detect_rpi_led.py --img 320 --weights yolov5n_320px-fp32.tflite --source 0
 ```
 
-Change `--modeldir` to modify the model file location as needed.
-
 </details>
+
 
 ## Training Dataset
 
