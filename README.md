@@ -4,7 +4,7 @@ This GitHub repository show real-time object detection using a Raspberry Pi, YOL
 ![Raspberry Pi](https://img.shields.io/badge/-RaspberryPi-C51A4A?style=for-the-badge&logo=Raspberry-Pi) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Jupyter Notebook](https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white) ![OpenCV](https://img.shields.io/badge/opencv-%23white.svg?style=for-the-badge&logo=opencv&logoColor=white)
 
 
-This GitHub repository show real-time object detection using a Raspberry Pi, MobileNetSSDv2 TensorFlow Lite model, LED indicators, and an LCD display. the feature of this project include:
+This GitHub repository show real-time object detection using a Raspberry Pi, YOLOv5 with TensorFlow Lite framework, LED indicators, and an LCD display. the feature of this project include:
 
 - Show fps for each detection
 - Output the class using LED for each class (there is 5 classes: car, person, truck, bus, motorbike)
@@ -145,16 +145,11 @@ With LED/LCD:
 
 </details>
 
-
 ## Training Dataset
 
 If you want to train your own model, you can utilize the resource provided below:
 
-<a href="https://colab.research.google.com/github/EdjeElectronics/TensorFlow-Lite-Object-Detection-on-Android-and-Raspberry-Pi/blob/master/Train_TFLite2_Object_Detction_Model.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
-
-Reference Jupyter Notebook File:
-
-<a href="https://github.com/kiena-dev/Raspberry-PI-MobileNetSSDv2-tflite-LED/blob/main/MobinetV2_TFLite_training.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+[<a href="https://colab.research.google.com/github/EdjeElectronics/TensorFlow-Lite-Object-Detection-on-Android-and-Raspberry-Pi/blob/master/Train_TFLite2_Object_Detction_Model.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>](https://colab.research.google.com/drive/1XD1UWd6qwKKGVTH23qM9EP5SraieYXRp)
 
 Dataset from Roboflow:
 
@@ -162,6 +157,30 @@ Dataset from Roboflow:
 
 Be sure to make use of these resources to train your model and achieve optimal results!
 
+## Tips
+
+You can change your own class, add or modify in [coco128.yaml](/data/coco128.yaml). modify the code below:
+
+```bash
+names:
+- bus
+- mobil
+- honda
+- orang
+- truck
+nc: 5
+roboflow:
+  license: CC BY 4.0
+  project: skripsi-dtmyf
+  url: https://universe.roboflow.com/devan-naratama-2xq45/skripsi-dtmyf/dataset/2
+  version: 2
+  workspace: devan-naratama-2xq45
+test: ../test/images
+train: /devan/datasets/Skripsi-2/train/images
+val: /devan/datasets/Skripsi-2/valid/images
+```
+
+you can change your own class!
 
 ## Authors
 
@@ -170,9 +189,9 @@ Be sure to make use of these resources to train your model and achieve optimal r
 ## Reference
 Special thanks to the following resources that inspired and contributed to this project:
 
+- [YOLOv5 Github Page as main source](https://github.com/ultralytics/yolov5)
 - [QEngineering](https://qengineering.eu/)
 - [Tensorflow](https://tensorflow.org/)
-- [TensorFlow Lite Object Detection on Android and Raspberry Pi by EdjeElectronics](https://github.com/EdjeElectronics/TensorFlow-Lite-Object-Detection-on-Android-and-Raspberry-Pi)
 
 
 
