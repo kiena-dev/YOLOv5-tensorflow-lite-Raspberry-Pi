@@ -1,0 +1,16 @@
+names:
+- bus
+- mobil
+- honda
+- orang
+- truck
+nc: 5
+roboflow:
+  license: CC BY 4.0
+  project: skripsi-dtmyf
+  url: https://universe.roboflow.com/devan-naratama-2xq45/skripsi-dtmyf/dataset/2
+  version: 2
+  workspace: devan-naratama-2xq45
+test: ../test/images
+train: /devan/datasets/Skripsi-2/train/images
+val: /devan/datasets/Skripsi-2/valid/images
