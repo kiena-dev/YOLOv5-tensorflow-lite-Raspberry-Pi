@@ -73,6 +73,105 @@ Follow this organized table to establish the proper connections, you can also re
 </details>
 
 
-## Installation
+To run this project, you need [Python 3.5](https://docs.python.org/3/) or higher installed on your system. Follow these steps to get started:
+
+- Clone the repository and navigate to the project directory: :
+```bash
+  git clone https://github.com/kiena-dev/Raspberry-PI-MobileNetSSDv2-tflite-LED.git
+  cd Raspberry-PI-MobileNetSSDv2-tflite-LED
+```
+
+- Create a Python virtual environment (optional but recommended):
+```bash
+  python3 -m venv venv
+```
+
+- Activate the virtual environment:
+```bash
+  source venv/bin/activate
+```
+
+- Install the required dependencies using pip3:
+```bash
+  pip3 install -r get_requirement.txt
+```
+
+Now you have successfully installed the project and its dependencies.
+    
+## Usage
+
+<details>
+<summary>Video Usage</summary>
+
+Default (without LED/LCD):
+```bash
+  python3 RPI_detect_video.py --modeldir=mobilenetssd_320 --video=video_test.mp4 --graph=detect.tflite
+```
+
+With LED/LCD:
+
+```bash
+  python3 RPI_detect_video_led.py --modeldir=mobilenetssd_320 --video=video_test.mp4 --graph=detect.tflite
+```
+
+</details>
+
+<details>
+<summary>Image Usage</summary>
+
+```bash
+  python3 RPI_detect_image.py --modeldir=mobilenetssd_320 --graph=detect.tflite --imagedir=image --save_results
+```
+
+Remove `--save_results` if you don't want to save images and change `--graph` to switch the model.
+
+</details>
+
+<details>
+<summary>Webcam Usage</summary>
+
+Default (without LED/LCD):
+```bash
+  python3 RPI_detect_webcam.py --modeldir=mobilenetssd_320 --graph=detect.tflite
+```
+
+With LED/LCD:
+
+```bash
+  python3 RPI_detect_webcam_led.py --modeldir=mobilenetssd_320 --graph=detect.tflite
+```
+
+Change `--modeldir` to modify the model file location as needed.
+
+</details>
+
+## Training Dataset
+
+If you want to train your own model, you can utilize the resource provided below:
+
+<a href="https://colab.research.google.com/github/EdjeElectronics/TensorFlow-Lite-Object-Detection-on-Android-and-Raspberry-Pi/blob/master/Train_TFLite2_Object_Detction_Model.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
+Reference Jupyter Notebook File:
+
+<a href="https://github.com/kiena-dev/Raspberry-PI-MobileNetSSDv2-tflite-LED/blob/main/MobinetV2_TFLite_training.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
+Dataset from Roboflow:
+
+<a href="https://universe.roboflow.com/devan-naratama-2xq45/skripsi-dtmyf"><img src="https://app.roboflow.com/images/download-dataset-badge.svg"></img></a>   <a href="https://universe.roboflow.com/devan-naratama-2xq45/skripsi-dtmyf/model/"><img src="https://app.roboflow.com/images/try-model-badge.svg"></img></a>
+
+Be sure to make use of these resources to train your model and achieve optimal results!
+
+
+## Authors
+
+- [@kiena](https://github.com/kiena-dev)
+
+## Reference
+Special thanks to the following resources that inspired and contributed to this project:
+
+- [QEngineering](https://qengineering.eu/)
+- [Tensorflow](https://tensorflow.org/)
+- [TensorFlow Lite Object Detection on Android and Raspberry Pi by EdjeElectronics](https://github.com/EdjeElectronics/TensorFlow-Lite-Object-Detection-on-Android-and-Raspberry-Pi)
+
 
 
