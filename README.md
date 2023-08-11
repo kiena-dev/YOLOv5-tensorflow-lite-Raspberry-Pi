@@ -15,7 +15,7 @@ Below is the following demo video showcasing the Raspberry Pi in action. When re
 
 <img src="other/demo_video_yolov5.gif" alt="Overview" width="700">
 
-## mAP
+## mAP and FPS
 
 | Model             | mAP@50  | mAP@50:5:95 | FPS  |
 |-------------------|---------|-------------|------|
